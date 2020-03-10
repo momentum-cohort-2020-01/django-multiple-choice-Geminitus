@@ -11,8 +11,9 @@ werkzeug = "*"
 django-environ = "*"
 django-registration-redux = "*"
 
+
 [requires]
-python_version = "3.7"
+python_version = "3.8"
 
 [dev-packages]
 prospector = "*"
