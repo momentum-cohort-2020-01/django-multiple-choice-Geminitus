@@ -19,7 +19,7 @@ from django.urls import include, path
 from ChunkCascade import views
 
 urlpatterns = [
-    path('',views.homepage, name='homepage')
+    path('',views.homepage, name='homepage'),
     path('account/', include('registration.backends.default.urls')),
     path('admin/', admin.site.urls),
 ]

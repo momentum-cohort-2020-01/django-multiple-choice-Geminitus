@@ -44,11 +44,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'ChunkCascade',
     # Third-party
     'debug_toolbar',
     'django_extensions',
-
+    
     # Project-specific
     'users',
 ]
