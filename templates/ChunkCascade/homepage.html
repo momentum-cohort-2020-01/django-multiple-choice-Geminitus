@@ -3,5 +3,11 @@
 {% load static %}
 
 {% block content %}
-<h1>This is the Homepage</h1>
+{% for question in questions %}
+<div id="{{question.pk}}">
+  <a href="{% url 'question-detail' question.pk %}">
+    <h3>{{question.question_title}}</h3>
+  </a>
+</div>
+{% endfor %}
 {% endblock %}

@@ -1,4 +1,4 @@
 {
-  "python.pythonPath": "C:\\Users\\austin.smith\\.virtualenvs\\django-multiple-choice-Geminitus-BOo2fvqr\\Scripts\\python.exe",
+  "python.pythonPath": "/Users/geminitus/.local/share/virtualenvs/django-multiple-choice-Geminitus-p1dfzwlg/bin/python",
   "python.formatting.provider": "yapf"
 }

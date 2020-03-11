@@ -9,8 +9,24 @@
   <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
   {% block title %}<title>Welcome to Chunk Cascade</title>{% endblock %}
 </head>
+<nav>
+  <div class="pa3 mr2">
+    <h1>Welcome to Chunk Cascade</h1>
+  </div>
+  <div class="flex border-box items-start">
+    <div class="outline pa1"><a href="#">Home</a></div>
+    <div class="outline pa1"><a href="#">Profile</a></div>
+    <div class="outline pa1"><a href="#">Logout</a></div>
+    <div class="items-end">
+      <input class="" type="text">
+      <button class="">search</button>
+    </div>
+  </div>
+</nav>
+<br><br><br><br>
 
-<body>
+<body class="flex-column">
+
   {% block content %}
 
   {% endblock %}

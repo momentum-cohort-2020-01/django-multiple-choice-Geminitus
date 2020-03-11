@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block heading %}
+{{ question.question_title }}
+{% endblock %}
+
+{% block content %}
+<h1>{{ question.question_title }}</h1>
+<p> {{question.question_text}} </p>
+<h5>{{question.question_owner}}</h5>
+<br>
+<h4>{{ answer.answer_text }}</h4>
+<br>
+{% endblock %}
