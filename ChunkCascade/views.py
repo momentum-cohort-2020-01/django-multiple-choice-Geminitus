@@ -4,7 +4,7 @@ from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
 import json
 
-
+@login_required
 def homepage(request):
     return render(
         request,
