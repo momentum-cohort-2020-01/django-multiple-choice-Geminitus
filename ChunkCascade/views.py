@@ -8,7 +8,7 @@ import json
 def homepage(request):
     return render(
         request,
-        "base.html",
+        "ChunkCascade/homepage.html",
     )
 
 

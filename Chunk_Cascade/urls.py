@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
+from ChunkCascade import views
 
 urlpatterns = [
+    path('',views.homepage, name='homepage')
     path('account/', include('registration.backends.default.urls')),
     path('admin/', admin.site.urls),
 ]
