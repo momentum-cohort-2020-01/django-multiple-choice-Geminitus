@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'django_extensions',
     'django_heroku',
-    'psycopg2',
 
     # Project-specific
     'users',
