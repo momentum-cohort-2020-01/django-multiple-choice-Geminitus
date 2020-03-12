@@ -3,11 +3,19 @@
 {% load static %}
 
 {% block content %}
-{% for question in questions %}
-<div id="{{question.pk}}">
-  <a href="{% url 'question-detail' question.pk %}">
-    <h3>{{question.question_title}}</h3>
-  </a>
+<div class="w-20">me</div>
+<div id="questions_field" class="w-60">
+  {% for question in questions %}
+
+  <div id="{{question.pk}}" class="pa2 w-60">
+    <a class="link b black hover-gray" href="{% url 'question-detail' question.pk %}">
+      <h3>{{question.question_title}}</h3>
+    </a>
+  </div>
+
+  {% endfor %}
 </div>
-{% endfor %}
+<div class="w-20">
+  help
+</div>
 {% endblock %}

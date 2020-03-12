@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     # Third-party
     'debug_toolbar',
     'django_extensions',
-    
+    'django_heroku',
+
     # Project-specific
     'users',
 ]
@@ -146,3 +147,7 @@ INTERNAL_IPS = [
 
 # Registration redux settings
 ACCOUNT_ACTIVATION_DAYS = 7
+
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
