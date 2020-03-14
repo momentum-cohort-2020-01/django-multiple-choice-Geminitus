@@ -27,7 +27,7 @@ BASE_DIR = Path(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY', '<old-secret-key>')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -44,10 +44,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'ChunkCascade',
     # Third-party
     'debug_toolbar',
     'django_extensions',
+    'django_heroku',
 
     # Project-specific
     'users',
@@ -146,3 +147,7 @@ INTERNAL_IPS = [
 
 # Registration redux settings
 ACCOUNT_ACTIVATION_DAYS = 7
+
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
