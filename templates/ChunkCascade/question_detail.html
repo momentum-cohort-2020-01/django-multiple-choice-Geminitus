@@ -11,8 +11,8 @@
   <p> {{question.question_text}} </p>
   <h5>{{question.question_owner}}</h5>
   <br>
-  <div style="background-color: #F9D6AE; color: black; height: 600px">
-    bork
+  {% for answer %}
+  <div style="background-color: #F9D6AE; color: black;">
     <h4>{{ answer.answer_text }}</h4>
   </div>
 </div>

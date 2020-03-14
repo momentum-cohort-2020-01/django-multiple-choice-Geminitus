@@ -11,7 +11,7 @@ class Question(models.Model):
     answered_at = models.DateTimeField(blank=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
     favorited = models.BooleanField()
-    question_owner = models.ForeignKey(settings.AUTH_USER_MODEL,
+    question_owner = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='questions'
                                        on_delete=models.DO_NOTHING)
 
     def __str__(self):

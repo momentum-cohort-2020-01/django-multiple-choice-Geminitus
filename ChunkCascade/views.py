@@ -20,7 +20,7 @@ def question_detail(request, pk):
     question = Question.objects.get(pk=pk)
     return render(request, 'ChunkCascade/question_detail.html', {
         "question": question,
-        "pk": pk
+        "pk": pk,
     })
 
 
@@ -29,3 +29,8 @@ def question_detail(request, pk):
 def start_timer(request):
     data = json.loads(request.body.decode("utf-8"))
     return JsonResponse({"status": "ok", "request_data": data})
+
+
+@login_required
+def profile_page(request):
+    return render(request, 'ChunkCascade/profile_page.html')

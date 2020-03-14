@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block heading %}
+{{ request.user.username }} Profile Page
+{% endblock %}
+
+{% block content %}
+<div>
+  {{ request.user.username }}
+</div>
+<div>{{ request.user.email }}</div>
+<div>{{ request.user. }}</div>
