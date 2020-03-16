@@ -26,6 +26,11 @@
         <input class="" type="text">
         <button class="">search</button>
       </div>
+      {% if request.user.is_authenticated %}
+      <div class="">
+        <button><a href="{% url 'question-new' %}">+</a></button>
+      </div>
+      {% endif %}
     </div>
   </div>
 </nav>

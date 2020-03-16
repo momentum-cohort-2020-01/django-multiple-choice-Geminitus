@@ -5,13 +5,14 @@ from django.conf import settings
 
 class Question(models.Model):
     question_title = models.CharField(max_length=256)
-    question_text = models.CharField(max_length=1000)
+    question_text = models.TextField()
     answered = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     answered_at = models.DateTimeField(blank=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
-    favorited = models.BooleanField()
-    question_owner = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='questions'
+    favorited = models.BooleanField(default=False)
+    question_owner = models.ForeignKey(settings.AUTH_USER_MODEL,
+                                       related_name='questions',
                                        on_delete=models.DO_NOTHING)
 
     def __str__(self):

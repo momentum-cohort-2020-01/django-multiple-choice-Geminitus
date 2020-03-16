@@ -9,4 +9,10 @@
   {{ request.user.username }}
 </div>
 <div>{{ request.user.email }}</div>
-<div>{{ request.user. }}</div>
+<ul>
+  {% for question in request.user.questions.all %}
+  <li>{{ question.question_title }}</li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

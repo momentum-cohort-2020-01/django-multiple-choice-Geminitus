@@ -6,6 +6,7 @@ import json
 from django.contrib.auth.decorators import login_required
 from .models import Question, Answer, Comment
 from django.shortcuts import render, redirect, get_object_or_404
+from .forms import QuestionForm
 
 
 @login_required
@@ -34,3 +35,18 @@ def start_timer(request):
 @login_required
 def profile_page(request):
     return render(request, 'ChunkCascade/profile_page.html')
+
+
+@login_required
+def question_new(request):
+    if request.method == 'POST':
+        form = QuestionForm(request.POST)
+        if form.is_valid():
+            question = form.save(commit=False)
+            question.question_owner = request.user
+            question.save()
+            return redirect('question-detail', pk=question.pk)
+    else:
+        form = QuestionForm()
+
+    return render(request, 'ChunkCascade/question_new.html', {"form": form})
