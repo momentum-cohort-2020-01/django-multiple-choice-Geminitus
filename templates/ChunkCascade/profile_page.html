@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block heading %}
+{{ request.user.username }} Profile Page
+{% endblock %}
+
+{% block content %}
+<div>
+  {{ request.user.username }}
+</div>
+<div>{{ request.user.email }}</div>
+<ul>
+  {% for question in request.user.questions.all %}
+  <li>{{ question.question_title }}</li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

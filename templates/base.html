@@ -8,7 +8,14 @@
   <link href="https://fonts.googleapis.com/css?family=Short+Stack&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.11.1/tachyons.css">
   <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-  {% block title %}<title>Welcome to Chunk Cascade</title>{% endblock %}
+  <script src="{% static 'js/script.js' %}" defer></script>
+
+  {% block title %}
+
+  <title>Welcome to Chunk Cascade</title>
+
+  {% endblock %}
+
 </head>
 <nav class="" style="background-color: #CA5310; font-family: 'Short Stack', cursive;">
   <div class="pa3 mr2">
@@ -19,13 +26,18 @@
       <div class="outline mr1 ml1"><a class="no-underline ph2 link hover-near-white b"
           style="background-color: #FF6100; color: #691E06" href="{% url 'homepage' %}">Home</a></div>
       <div class="outline mr1 ml1"><a class="no-underline ph2 link hover-near-white b"
-          style="background-color: #FF6100; color: #691E06" href="#">Profile</a></div>
+          style="background-color: #FF6100; color: #691E06" href="{% url 'profile-page' %}">Profile</a></div>
       <div class="outline mr1 ml1"><a class="no-underline ph2 link hover-near-white b"
           style="background-color: #FF6100; color: #691E06" href="#">Logout</a></div>
       <div class="items-end">
         <input class="" type="text">
         <button class="">search</button>
       </div>
+      {% if request.user.is_authenticated %}
+      <div class="">
+        <button><a href="{% url 'question-new' %}">+</a></button>
+      </div>
+      {% endif %}
     </div>
   </div>
 </nav>
